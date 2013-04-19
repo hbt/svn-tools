@@ -1,0 +1,21 @@
+= Symfony Shortcuts Plugin =
+
+This plugin is basically what the title says, a library of symfony shortcuts. The syntax to many functions and objects in symfony can be long and tedious to type often, so these functions have been created so they can be used ANYWHERE in your application.
+
+== Out of box shortcuts ==
+{{{
+<?php
+sfContext(); // returns sfContext instance
+sfController(); // returns sfController instance
+sfUser(); // returns sfUser instance
+isAuthenticated(); // returns true false if sfUser is authenticated
+sfRequest(); // returns sfRequest instance
+sfResponse(); // returns sfResponse instance
+?>
+
+More coming soon
+}}}
+
+== Auto Loading Your Custom Shortcuts ==
+
+Create a file named myShortcuts.php in your project_dir/lib/myShortcuts.php, this will be autoloaded and the functions defined here will be available everywhere in your symfony application

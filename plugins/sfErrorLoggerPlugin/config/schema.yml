@@ -1,0 +1,14 @@
+propel:
+  _attributes:        { package: plugins.sfErrorLoggerPlugin.lib.model }
+
+  sf_error_log:
+    _attributes:      { phpName: sfErrorLog }
+    type:             varchar(3)
+    class_name:       varchar(255)
+    message:          longvarchar
+    module_name:      varchar(255)
+    action_name:      varchar(255)
+    exception_object: clob
+    request:          clob
+    uri:              varchar(255)
+    created_at:       timestamp

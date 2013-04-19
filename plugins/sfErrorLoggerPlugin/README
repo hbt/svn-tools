@@ -1,0 +1,41 @@
+= sfErrorLoggerPlugin plugin =
+
+The `sfErrorLoggerPlugin` logs all your 404 and 500 errors to the database.
+
+It also provides a module `sfErrorLogViewer` to navigate through the errors.
+
+== Installation ==
+
+  * Install the plugin
+  
+    {{{
+      symfony plugin:install sfErrorLoggerPlugin
+    }}}
+
+  * Rebuild your model
+  
+    {{{
+      symfony propel:build-all
+    }}}
+
+  * Enable the viewer module in your `settings.yml` (optional)
+
+    {{{
+      all:
+        .settings:
+          activated_modules:      [..., sfErrorLogViewer]
+    }}}
+
+  * Clear the cache
+
+    {{{
+      symfony cc
+    }}}
+
+  * You're done.
+
+== Changelog ==
+
+=== 2008-**-** | 1.1.0 ===
+
+ * converted the plugin to 1.1

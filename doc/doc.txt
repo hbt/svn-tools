@@ -1,0 +1,24 @@
+Scripts:
+
+- batch/search_diff.php
+
+Will search a string across multiple revisions of a file.
+Example:
+php batch/search.php http://svn.ssipm.com/projects/uwo/ctms/lib/model/EmailTemplate.php [query]
+
+- batch/diff.php
+
+Will look for changes between specific lines in a file.
+
+Example:
+ php batch/diff.php http://svn.ssipm.com/projects/uwo/ctms/lib/model/EmailTemplate.php 20 50
+
+Will look for changes between lines 20 and 50 in all revisions of file.
+
+----
+
+Note:
+All scripts export all revisions of a file before computing.
+Make sure permissions are set
+
+

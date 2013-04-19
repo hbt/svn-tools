@@ -1,0 +1,33 @@
+generator:
+  class:              sfPropelAdminGenerator
+  param:
+    model_class:      sfErrorLog
+    theme:            default
+
+    fields:
+      type:        { type: plain }
+      class_name:  { type: plain }
+      message:     { type: plain }
+      module_name: { type: plain }
+      action_name: { type: plain }
+      created_at:  { type: plain, params: date_format="dd/MM/yyyy hh:mm:ss" }
+
+    list:
+      title:   Error Viewer
+      display: [=type, class_name, module_name, action_name, uri, message, created_at]
+      sort:    [created_at, DESC]
+      filters: [created_at, class_name, module_name, uri, _type]
+      object_actions:
+        delete_all_similar: { name: delete all similar, action: deleteAllSimilar, icon: %SF_ADMIN_WEB_DIR%/images/delete.png, params: confirm=Are you sure? }
+      actions:
+        delete_all:         { name: delete all, action: deleteAll, icon: %SF_ADMIN_WEB_DIR%/images/delete.png, params: confirm=Are you sure? post=true }
+
+    edit:
+      title: Error "%%type%%" for "%%module_name%%/%%action_name%%"
+      display:
+        Information:  [type, message, class_name, module_name, action_name, created_at]
+        Request:      [_request]
+        Traces:       [_traces]
+      actions:
+        _list:        ~
+        delete_all_similar: { name: delete all similar, action: deleteAllSimilar, icon: %SF_ADMIN_WEB_DIR%/images/delete.png, params: class=sf_admin_action_delete confirm=Are you sure? }
